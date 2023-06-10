@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, BrowserRouter as Router, Switch, withRouter } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 //Custom Components
 
@@ -60,6 +60,13 @@ import LoadTop from '../components/Common/ScrollTop/LoadTop'
 
 
 const App = () => {
+    useEffect(() => {
+        fetch('http://localhost:8000/')
+        .then(res => res.json())
+        .then(res => console.log('Response is', res))
+        .catch(err => console.log('Error is', err));
+    })
+
     return (
         <div className='App'>
             <Router>
