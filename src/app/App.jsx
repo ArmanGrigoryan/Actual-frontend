@@ -60,12 +60,6 @@ import LoadTop from '../components/Common/ScrollTop/LoadTop'
 
 
 const App = () => {
-    useEffect(() => {
-        fetch('http://localhost:8000/')
-        .then(res => res.json())
-        .then(res => console.log('Response is', res))
-        .catch(err => console.log('Error is', err));
-    })
 
     return (
         <div className='App'>
